@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curso", "Curso\Curso.csproj", "{0B062045-A5BD-40FA-A75F-FCD4894EC221}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Curso\Web.csproj", "{0B062045-A5BD-40FA-A75F-FCD4894EC221}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D5C0C97B-85DA-4224-8F4D-09F2126238B1}"
 EndProject

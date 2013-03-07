@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B062045-A5BD-40FA-A75F-FCD4894EC221}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Curso</RootNamespace>
+    <AssemblyName>Curso</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootmetro-charms.css" />
+    <Content Include="Content\css\bootmetro-tiles.css" />
+    <Content Include="Content\css\bootmetro.css" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\icomoon.css" />
+    <Content Include="Content\css\metro-ui-dark.css" />
+    <Content Include="Content\css\metro-ui-light.css" />
+    <Content Include="Content\font\icomoon97172\index.html" />
+    <Content Include="Content\font\icomoon97172\license.txt" />
+    <Content Include="Content\font\icomoon97172\style.css" />
+    <Content Include="Content\font\LICENSE.txt" />
+    <Content Include="Content\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\ico\favicon.ico" />
+    <Content Include="Content\img\appbar.png" />
+    <Content Include="Content\img\avatar-movie-puzzles-2.jpg" />
+    <Content Include="Content\img\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="Content\img\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="Content\img\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="Content\img\bs-docs-masthead-pattern.png" />
+    <Content Include="Content\img\bs-docs-responsive-illustrations.png" />
+    <Content Include="Content\img\bs-docs-twitter-github.png" />
+    <Content Include="Content\img\Coding app.png" />
+    <Content Include="Content\img\detail-appbar-1.png" />
+    <Content Include="Content\img\detail-appbar-2.png" />
+    <Content Include="Content\img\detail-charms.png" />
+    <Content Include="Content\img\detail-headermenu.png" />
+    <Content Include="Content\img\detail-hub.png" />
+    <Content Include="Content\img\detail-icons.png" />
+    <Content Include="Content\img\detail-themes.png" />
+    <Content Include="Content\img\Devices.png" />
+    <Content Include="Content\img\examples\bootstrap-example-carousel.png" />
+    <Content Include="Content\img\examples\bootstrap-example-fluid.jpg" />
+    <Content Include="Content\img\examples\bootstrap-example-hero.jpg" />
+    <Content Include="Content\img\examples\bootstrap-example-marketing-narrow.png" />
+    <Content Include="Content\img\examples\bootstrap-example-signin.png" />
+    <Content Include="Content\img\examples\bootstrap-example-starter.jpg" />
+    <Content Include="Content\img\examples\bootstrap-example-sticky-footer.png" />
+    <Content Include="Content\img\examples\browser-icon-chrome.png" />
+    <Content Include="Content\img\examples\browser-icon-firefox.png" />
+    <Content Include="Content\img\examples\browser-icon-safari.png" />
+    <Content Include="Content\img\examples\slide-01.jpg" />
+    <Content Include="Content\img\examples\slide-02.jpg" />
+    <Content Include="Content\img\examples\slide-03.jpg" />
+    <Content Include="Content\img\github-icons.png" />
+    <Content Include="Content\img\github.gif" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\img\grid-baseline-20px.png" />
+    <Content Include="Content\img\h2.png" />
+    <Content Include="Content\img\hero-small.png" />
+    <Content Include="Content\img\hero.png" />
+    <Content Include="Content\img\hero2.png" />
+    <Content Include="Content\img\hero3-black.png" />
+    <Content Include="Content\img\hero3.png" />
+    <Content Include="Content\img\hero4.png" />
+    <Content Include="Content\img\less-css-logo.png" />
+    <Content Include="Content\img\less-logo-large.png" />
+    <Content Include="Content\img\metro-tiles-wide.jpg" />
+    <Content Include="Content\img\metro-tiles-widepeek.png" />
+    <Content Include="Content\img\metro-tiles.jpg" />
+    <Content Include="Content\img\My Apps.png" />
+    <Content Include="Content\img\Octocat-96x96.png" />
+    <Content Include="Content\img\octocat.png" />
+    <Content Include="Content\img\progress-indeterminate-dark.gif" />
+    <Content Include="Content\img\progress-indeterminate-light.gif" />
+    <Content Include="Content\img\progress-indeterminate-ring-dark-small.gif" />
+    <Content Include="Content\img\progress-indeterminate-ring-dark.gif" />
+    <Content Include="Content\img\progress-indeterminate-ring-light-small.gif" />
+    <Content Include="Content\img\progress-indeterminate-ring-light.gif" />
+    <Content Include="Content\img\RegEdit.png" />
+    <Content Include="Content\img\sample1.png" />
+    <Content Include="Content\img\sample2.png" />
+    <Content Include="Content\img\sample3.png" />
+    <Content Include="Content\img\sample4.png" />
+    <Content Include="Content\img\sample5.png" />
+    <Content Include="Content\img\slide1.png" />
+    <Content Include="Content\img\slider2.png" />
+    <Content Include="Content\img\tile-wide-collection-1.jpg" />
+    <Content Include="Content\img\tile-wide-collection-2.png" />
+    <Content Include="Content\img\tile-wide-collection-3.gif" />
+    <Content Include="Content\img\tile-wide-collection-4.png" />
+    <Content Include="Content\img\tile-wide.jpg" />
+    <Content Include="Content\img\tile.png" />
+    <Content Include="Content\img\Windows 8.png" />
+    <Content Include="Content\img\Windows alt.png" />
+    <Content Include="Content\img\Windows Store.png" />
+    <Content Include="Content\img\windows-8-fish.jpg" />
+    <Content Include="Content\img\Windows.png" />
+    <Content Include="Content\img\windows_8_logo.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Scripts\bootmetro-charms.js" />
+    <Content Include="Scripts\bootmetro.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\holder.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.scrollTo.js" />
+    <Content Include="Scripts\modernizr-2.6.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{207BA717-B0A2-459F-A6F5-04BE0409B644}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Manager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\font\IcoMoon.eot" />
+    <None Include="Content\font\IcoMoon.svg" />
+    <None Include="Content\font\IcoMoon.ttf" />
+    <None Include="Content\font\IcoMoon.woff" />
+    <None Include="Content\font\icomoon97172\IcoMoon.eot" />
+    <None Include="Content\font\icomoon97172\IcoMoon.svg" />
+    <None Include="Content\font\icomoon97172\IcoMoon.ttf" />
+    <None Include="Content\font\icomoon97172\IcoMoon.woff" />
+    <None Include="Content\font\opensans-bold-webfont.eot" />
+    <None Include="Content\font\opensans-bold-webfont.svg" />
+    <None Include="Content\font\opensans-bold-webfont.ttf" />
+    <None Include="Content\font\opensans-bold-webfont.woff" />
+    <None Include="Content\font\opensans-light-webfont.eot" />
+    <None Include="Content\font\opensans-light-webfont.svg" />
+    <None Include="Content\font\opensans-light-webfont.ttf" />
+    <None Include="Content\font\opensans-light-webfont.woff" />
+    <None Include="Content\font\opensans-regular-webfont.eot" />
+    <None Include="Content\font\opensans-regular-webfont.svg" />
+    <None Include="Content\font\opensans-regular-webfont.ttf" />
+    <None Include="Content\font\opensans-regular-webfont.woff" />
+    <None Include="Content\font\opensans-semibold-webfont.eot" />
+    <None Include="Content\font\opensans-semibold-webfont.svg" />
+    <None Include="Content\font\opensans-semibold-webfont.ttf" />
+    <None Include="Content\font\opensans-semibold-webfont.woff" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58496</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

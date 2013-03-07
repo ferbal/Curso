@@ -6,6 +6,11 @@
     public class Realty
     {
         /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Gets the address.
         /// </summary>
         public string Address { get; private set; }

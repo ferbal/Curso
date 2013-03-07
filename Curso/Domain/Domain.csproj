@@ -40,13 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ObjectAlreadyExistsException.cs" />
     <Compile Include="Exceptions\ManagerHasRealtiesException.cs" />
+    <Compile Include="Exceptions\ObjectNotFoundException.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="Interested.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Realty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IInterestedRepository.cs" />
+    <Compile Include="Repository\IManagerRepository.cs" />
+    <Compile Include="Repository\IRealtyRepository.cs" />
+    <Compile Include="Repository\RealtyRepository.cs" />
+    <Compile Include="Repository\InterestedRepository.cs" />
+    <Compile Include="Repository\ManagerRepository.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
