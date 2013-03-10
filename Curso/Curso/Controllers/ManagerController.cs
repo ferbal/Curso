@@ -17,7 +17,18 @@ namespace Curso.Controllers
         /// <summary>
         /// The manager service.
         /// </summary>
-        private ManagerService managerService = new ManagerService();
+        private readonly IManagerService managerService;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagerController"/> class.
+        /// </summary>
+        /// <param name="managerService">
+        /// The manager service.
+        /// </param>
+        public ManagerController(IManagerService managerService)
+        {
+            this.managerService = managerService;
+        }
 
         /// <summary>
         /// The index.
@@ -94,7 +105,7 @@ namespace Curso.Controllers
         /// </returns>
         public ActionResult Delete(int id)
         {
-            // TODO: Delete :)
+            this.managerService.Delete(id);
             return this.RedirectToAction("Index");
         }
     }

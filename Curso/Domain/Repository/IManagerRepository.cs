@@ -29,10 +29,10 @@ namespace Domain.Repository
         /// <summary>
         /// The delete.
         /// </summary>
-        /// <param name="id">
-        /// The id.
+        /// <param name="manager">
+        /// The manager.
         /// </param>
-        void Delete(int id);
+        void Delete(Manager manager);
 
         /// <summary>
         /// The get all.

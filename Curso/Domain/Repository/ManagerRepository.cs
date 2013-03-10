@@ -58,12 +58,11 @@ namespace Domain.Repository
         /// <summary>
         /// The delete.
         /// </summary>
-        /// <param name="id">
-        /// The id.
+        /// <param name="manager">
+        /// The manager.
         /// </param>
-        public void Delete(int id)
+        public void Delete(Manager manager)
         {
-            var manager = this.Get(id);
             this.managers.Remove(manager);
         }
 
