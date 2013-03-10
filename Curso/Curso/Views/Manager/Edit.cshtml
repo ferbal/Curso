@@ -1,0 +1,32 @@
+﻿@model Curso.ViewModels.ManagerViewModel
+
+@{
+    ViewBag.Title = "Manager";
+}
+
+<div class="row-fluid metro">
+    <div class="span2 offset4">
+        @using (Html.BeginForm("Update", "Manager", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            <div class="control-group">
+                <label class="control-label">Nombre</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Edad</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Age)
+                    @Html.ValidationMessageFor(model => model.Age)
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="@Url.Action("Index","Manager")"><button type="button" class="btn">Cancelar</button></a>
+            </div>
+        }
+    </div>
+</div>
