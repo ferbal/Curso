@@ -1,5 +1,7 @@
 ﻿namespace Domain
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// The realty.
     /// </summary>
@@ -26,6 +28,11 @@
         public Manager Manager { get; private set; }
 
         /// <summary>
+        /// Gets the homes.
+        /// </summary>
+        public List<Home> Homes { get; private set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Realty"/> class.
         /// </summary>
         /// <param name="address">
@@ -43,6 +50,7 @@
             this.Details = details;
             this.Manager = manager;
             this.Manager.Realties.Add(this);
+            this.Homes = new List<Home>();
         }
 
         /// <summary>
@@ -74,6 +82,10 @@
         public void Delete()
         {
             this.Manager.Realties.Remove(this);
+            foreach (var home in this.Homes)
+            {
+                home.Delete();
+            }
         }
 
         // TIP: el codigo de Update se parece bastante al del constructor, con cosas de Delete. ¿Podemos hacer algo?

@@ -8,6 +8,11 @@
     public class Home
     {
         /// <summary>
+        /// Gets the realty.
+        /// </summary>
+        public Realty Realty { get; private set; }
+
+        /// <summary>
         /// Gets the address.
         /// </summary>
         public string Address { get; private set; }
@@ -25,14 +30,20 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="Home"/> class.
         /// </summary>
+        /// <param name="realty">
+        /// The realty.
+        /// </param>
         /// <param name="address">
         /// The address.
         /// </param>
         /// <param name="details">
         /// The details.
         /// </param>
-        public Home(string address, string details)
+        public Home(Realty realty, string address, string details)
         {
+            this.Realty = realty;
+            realty.Homes.Add(this);
+
             this.Address = address;
             this.Details = details;
             this.InterestedPeople = new List<Interested>();
@@ -47,10 +58,7 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        /// <param name="manager">
-        /// The manager.
-        /// </param>
-        public void Update(string address, string details, Manager manager)
+        public void Update(string address, string details)
         {
             this.Address = address;
             this.Details = details;
