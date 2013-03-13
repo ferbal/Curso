@@ -48,8 +48,7 @@
         {
             this.Address = address;
             this.Details = details;
-            this.Manager = manager;
-            this.Manager.Realties.Add(this);
+            this.Hire(manager);
             this.Homes = new List<Home>();
         }
 
@@ -69,11 +68,8 @@
         {
             this.Address = address;
             this.Details = details;
-
-            this.Manager.Realties.Remove(this); // Sacamos al viejo manager
-
-            this.Manager = newManager;
-            this.Manager.Realties.Add(this);
+            this.Fire();
+            this.Hire(newManager);
         }
 
         /// <summary>
@@ -88,6 +84,24 @@
             }
         }
 
-        // TIP: el codigo de Update se parece bastante al del constructor, con cosas de Delete. ¿Podemos hacer algo?
+        /// <summary>
+        /// The hire.
+        /// </summary>
+        /// <param name="manager">
+        /// The manager.
+        /// </param>
+        private void Hire(Manager manager)
+        {
+            this.Manager = manager;
+            this.Manager.Realties.Add(this);
+        }
+
+        /// <summary>
+        /// The fire.
+        /// </summary>
+        private void Fire()
+        {
+            this.Manager.Realties.Remove(this); // Sacamos al viejo manager
+        }
     }
 }

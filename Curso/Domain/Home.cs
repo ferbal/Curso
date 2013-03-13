@@ -41,9 +41,7 @@
         /// </param>
         public Home(Realty realty, string address, string details)
         {
-            this.Realty = realty;
-            realty.Homes.Add(this);
-
+            this.Assign(realty);
             this.Address = address;
             this.Details = details;
             this.InterestedPeople = new List<Interested>();
@@ -73,6 +71,40 @@
             {
                 interested.Homes.Remove(this); // Desvinculo la casa del interesado
             }
+        }
+
+        /// <summary>
+        /// The add.
+        /// </summary>
+        /// <param name="interested">
+        /// The interested.
+        /// </param>
+        public void AddInterested(Interested interested)
+        {
+            // TODO: Completar
+        }
+
+        /// <summary>
+        /// The remove interested.
+        /// </summary>
+        /// <param name="interested">
+        /// The interested.
+        /// </param>
+        public void RemoveInterested(Interested interested)
+        {
+            // TODO: Completar
+        }
+
+        /// <summary>
+        /// The assign.
+        /// </summary>
+        /// <param name="realty">
+        /// The realty.
+        /// </param>
+        private void Assign(Realty realty)
+        {
+            this.Realty = realty;
+            realty.Homes.Add(this);
         }
     }
 }
