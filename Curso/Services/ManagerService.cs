@@ -3,7 +3,7 @@
     using System.Collections.Generic;
 
     using Domain;
-    using Domain.Repository;
+    using Repository.Interfaces;
 
     /// <summary>
     /// The manager service.

@@ -1,9 +1,11 @@
-﻿
-namespace Domain.Repository
+﻿namespace Repository.Impl
 {
     using System.Collections.Generic;
 
+    using Domain;
     using Domain.Exceptions;
+
+    using Repository.Interfaces;
 
     /// <summary>
     /// The manager repository.
@@ -13,7 +15,7 @@ namespace Domain.Repository
         /// <summary>
         /// The managers.
         /// </summary>
-        private readonly List<Manager> managers = new List<Manager>() { new Manager("Adriano Filgueira", 27), new Manager("Apolinario Figueroa", 25) };
+        private readonly List<Manager> managers = new List<Manager> { new Manager("Adriano Filgueira", 27), new Manager("Apolinario Figueroa", 25) };
 
         /// <summary>
         /// The id counter.

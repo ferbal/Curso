@@ -1,9 +1,11 @@
-namespace Domain.Repository
+namespace Repository.Interfaces
 {
+    using Domain;
+
     /// <summary>
-    /// The RealtyRepository interface.
+    /// The InterestedRepository interface.
     /// </summary>
-    public interface IRealtyRepository // Tip: Pensar porque no tiene un metodo de "update"
+    public interface IInterestedRepository
     {
         /// <summary>
         /// The get.
@@ -12,17 +14,17 @@ namespace Domain.Repository
         /// The id.
         /// </param>
         /// <returns>
-        /// The Domain.Realty.
+        /// The Domain.Interested.
         /// </returns>
-        Realty Get(int id);
+        Interested Get(int id);
 
         /// <summary>
         /// The add.
         /// </summary>
-        /// <param name="realty">
-        /// The realty.
+        /// <param name="interested">
+        /// The interested.
         /// </param>
-        void Add(Realty realty);
+        void Add(Interested interested);
 
         /// <summary>
         /// The delete.

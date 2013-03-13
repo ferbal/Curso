@@ -6,12 +6,13 @@ namespace Curso.App_Start
     using System;
     using System.Web;
 
-    using Domain.Repository;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
+
+    using Repository.Impl;
+    using Repository.Interfaces;
 
     using Services;
 

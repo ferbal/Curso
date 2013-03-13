@@ -1,6 +1,8 @@
-namespace Domain.Repository
+namespace Repository.Interfaces
 {
     using System.Collections.Generic;
+
+    using Domain;
 
     /// <summary>
     /// The ManagerRepository interface.
