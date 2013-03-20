@@ -47,7 +47,7 @@
         {
             var connString = ConfigurationManager.ConnectionStrings["Curso"].ConnectionString;
             this.sessionFactory = Fluently.Configure()
-                                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connString))
+                                .Database(PostgreSQLConfiguration.Standard.ConnectionString(connString))
                                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ManagerMapping>())
                                 .ExposeConfiguration(BuildSchema)
                                 .BuildSessionFactory();
@@ -113,11 +113,7 @@
 
             // This NHibernate tool takes a configuration (with mapping info in) and exports a database schema from it
             var schemaExport = new SchemaExport(config);
-            if (generateSchema)
-            {
-                schemaExport.SetOutputFile("exportSQL.sql");
-            }
-
+            
             schemaExport.Drop(false, generateSchema);
             schemaExport.Create(false, generateSchema);
         }
