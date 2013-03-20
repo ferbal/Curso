@@ -7,9 +7,9 @@ namespace Repository.Interfaces
     /// <summary>
     /// The ManagerRepository interface.
     /// </summary>
-    public interface IManagerRepository
+    public interface IManagerRepository : IRepository<Manager>
     {
-        /// <summary>
+        /*/// <summary>
         /// The get.
         /// </summary>
         /// <param name="id">
@@ -42,6 +42,6 @@ namespace Repository.Interfaces
         /// <returns>
         /// The System.Collections.Generic.List`1[T -&gt; Domain.Manager].
         /// </returns>
-        List<Manager> GetAll();
+        List<Manager> GetAll();*/
     }
 }

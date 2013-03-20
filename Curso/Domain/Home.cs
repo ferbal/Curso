@@ -10,22 +10,22 @@
         /// <summary>
         /// Gets the realty.
         /// </summary>
-        public Realty Realty { get; private set; }
+        public virtual Realty Realty { get; private set; }
 
         /// <summary>
         /// Gets the address.
         /// </summary>
-        public string Address { get; private set; }
+        public virtual string Address { get; private set; }
 
         /// <summary>
         /// Gets the details.
         /// </summary>
-        public string Details { get; private set; }
+        public virtual string Details { get; private set; }
 
         /// <summary>
         /// Gets the interested people.
         /// </summary>
-        public List<Interested> InterestedPeople { get; private set; }
+        public virtual IList<Interested> InterestedPeople { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Home"/> class.
@@ -69,8 +69,10 @@
         {
             foreach (var interested in this.InterestedPeople)
             {
-                interested.Homes.Remove(this); // Desvinculo la casa del interesado
+                this.RemoveInterested(interested); // Desvinculo la casa del interesado
             }
+
+            this.Realty.Homes.Remove(this);
         }
 
         /// <summary>

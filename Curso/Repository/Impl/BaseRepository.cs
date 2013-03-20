@@ -9,6 +9,17 @@
     public abstract class BaseRepository<T> where T : class
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="BaseRepository{T}"/> class.
+        /// </summary>
+        /// <param name="hibernateSessionFactory">
+        /// The hibernate Session Factory.
+        /// </param>
+        protected BaseRepository(IHibernateSessionFactory hibernateSessionFactory)
+        {
+            this.hibernateSessionFactory = hibernateSessionFactory;
+        }
+
+        /// <summary>
         /// The get.
         /// </summary>
         /// <param name="id">
@@ -50,7 +61,7 @@
         /// <param name="o">
         /// The o.
         /// </param>
-        public void Remove(T o)
+        public void Delete(T o)
         {
             this.GetSessionFactory().GetSession().Delete(o);
         }
@@ -69,17 +80,6 @@
         public IHibernateSessionFactory GetSessionFactory()
         {
             return this.hibernateSessionFactory;
-        }
-
-        /// <summary>
-        /// The set session factory.
-        /// </summary>
-        /// <param name="nhibSessionFactory">
-        /// The nhib session factory.
-        /// </param>
-        protected void SetSessionFactory(IHibernateSessionFactory nhibSessionFactory)
-        {
-            this.hibernateSessionFactory = nhibSessionFactory;
         }
     }
 }

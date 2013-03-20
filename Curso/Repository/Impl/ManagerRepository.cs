@@ -10,8 +10,19 @@
     /// <summary>
     /// The manager repository.
     /// </summary>
-    public class ManagerRepository : IManagerRepository
+    public class ManagerRepository : BaseRepository<Manager>, IManagerRepository
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagerRepository"/> class.
+        /// </summary>
+        /// <param name="hibernateSessionFactory">
+        /// The hibernate session factory.
+        /// </param>
+        public ManagerRepository(IHibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {   
+        }
+
+        /*
         /// <summary>
         /// The managers.
         /// </summary>
@@ -89,6 +100,6 @@
         {
             this.idCounter++;
             return this.idCounter;
-        }
+        }*/
     }
 }

@@ -10,27 +10,34 @@
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
-        /// Gets the address.
+        /// Gets or sets the address.
         /// </summary>
-        public string Address { get; private set; }
+        public virtual string Address { get; set; }
 
         /// <summary>
-        /// Gets the details.
+        /// Gets or sets the details.
         /// </summary>
-        public string Details { get; private set; }
+        public virtual string Details { get; set; }
 
         /// <summary>
-        /// Gets the manager.
+        /// Gets or sets the manager.
         /// </summary>
-        public Manager Manager { get; private set; }
+        public virtual Manager Manager { get; set; }
 
         /// <summary>
-        /// Gets the homes.
+        /// Gets or sets the homes.
         /// </summary>
-        public List<Home> Homes { get; private set; }
+        public virtual IList<Home> Homes { get; set; }
+
+        /// <summary>
+        /// Only for NHibernate
+        /// </summary>
+        public Realty()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Realty"/> class.
@@ -64,7 +71,7 @@
         /// <param name="newManager">
         /// The new manager.
         /// </param>
-        public void Update(string address, string details, Manager newManager)
+        public virtual void Update(string address, string details, Manager newManager)
         {
             this.Address = address;
             this.Details = details;
@@ -75,9 +82,9 @@
         /// <summary>
         /// The delete.
         /// </summary>
-        public void Delete()
+        public virtual void Delete()
         {
-            this.Manager.Realties.Remove(this);
+            this.Fire();
             foreach (var home in this.Homes)
             {
                 home.Delete();

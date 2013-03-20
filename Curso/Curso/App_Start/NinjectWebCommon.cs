@@ -11,6 +11,7 @@ namespace Curso.App_Start
     using Ninject;
     using Ninject.Web.Common;
 
+    using Repository;
     using Repository.Impl;
     using Repository.Interfaces;
 
@@ -58,7 +59,9 @@ namespace Curso.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope();
+            kernel.Bind<IHibernateSessionFactory>().To<HibernateSessionFactory>().InSingletonScope();
+
+            kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
             kernel.Bind<IManagerService>().To<ManagerService>().InSingletonScope().WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)));
         }        
     }

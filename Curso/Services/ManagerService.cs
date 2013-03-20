@@ -32,9 +32,15 @@
         /// <returns>
         /// The System.Collections.Generic.List`1[T -&gt; Domain.Manager].
         /// </returns>
-        public List<Manager> GetAll()
+        public IList<Manager> GetAll()
         {
-            return this.managerRepository.GetAll();
+            IList<Manager> result = null;
+            this.managerRepository.GetSessionFactory().SessionInterceptor(() =>
+            {
+                result = this.managerRepository.GetAll();
+            });
+
+            return result;
         }
 
         /// <summary>
@@ -48,7 +54,12 @@
         /// </returns>
         public Manager Get(int id)
         {
-            return this.managerRepository.Get(id);
+            Manager result = null;
+            this.managerRepository.GetSessionFactory().SessionInterceptor(() =>
+            {
+                result = this.managerRepository.Get(id);
+            });
+            return result;
         }
 
         /// <summary>
@@ -62,8 +73,11 @@
         /// </param>
         public void Create(string name, int age) // TIP: Que pasaria si en vez de 2 parametros, el manager tuviera 100???
         {
-            var manager = new Manager(name, age);
-            this.managerRepository.Add(manager);
+            this.managerRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var manager = new Manager(name, age);
+                this.managerRepository.Add(manager);
+            });
         }
 
         /// <summary>
@@ -80,8 +94,11 @@
         /// </param>
         public void Update(int id, string name, int age)
         {
-            var manager = this.managerRepository.Get(id);
-            manager.Update(name, age);
+            this.managerRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var manager = this.managerRepository.Get(id);
+                manager.Update(name, age);
+            });
         }
 
         /// <summary>
@@ -92,9 +109,12 @@
         /// </param>
         public void Delete(int id)
         {
-            var manager = this.managerRepository.Get(id);
-            manager.Delete();
-            this.managerRepository.Delete(manager);
+            this.managerRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var manager = this.managerRepository.Get(id);
+                manager.Delete();
+                this.managerRepository.Delete(manager);
+            });
         }
     }
 }

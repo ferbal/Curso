@@ -33,7 +33,7 @@
         /// <param name="t">
         /// The t.
         /// </param>
-        void Remove(T t);
+        void Delete(T t);
 
         /// <summary>
         /// The get all.
