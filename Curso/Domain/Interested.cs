@@ -10,22 +10,22 @@
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public string Name { get; private set; }
+        public virtual string Name { get; private set; }
 
         /// <summary>
         /// Gets the phone.
         /// </summary>
-        public string Phone { get; private set; }
+        public virtual string Phone { get; private set; }
 
         /// <summary>
         /// Gets the homes.
         /// </summary>
-        public List<Home> Homes { get; private set; }
+        public virtual IList<Home> Homes { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Interested"/> class.
@@ -65,7 +65,7 @@
         {
             foreach (var home in this.Homes)
             {
-                home.InterestedPeople.Remove(this);
+                home.RemoveInterested(this);
             }
         }
     }

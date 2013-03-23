@@ -12,22 +12,29 @@
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
-        /// Gets the name.
+        /// Gets or sets the name.
         /// </summary>
-        public string Name { get; private set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
-        /// Gets the age.
+        /// Gets or sets the age.
         /// </summary>
-        public int Age { get; private set; }
+        public virtual int Age { get; set; }
 
         /// <summary>
-        /// Gets the realties.
+        /// Gets or sets the realties.
         /// </summary>
-        public List<Realty> Realties { get; private set; }
+        public virtual IList<Realty> Realties { get; set; }
+
+        /// <summary>
+        /// Only for NHibernate
+        /// </summary>
+        public Manager()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Manager"/> class.
@@ -54,7 +61,7 @@
         /// <param name="age">
         /// The age.
         /// </param>
-        public void Update(string name, int age)
+        public virtual void Update(string name, int age)
         {
             this.Name = name;
             this.Age = age;
@@ -66,7 +73,7 @@
         /// <exception cref="ManagerHasRealtiesException">
         /// Throws an exception if the manager has assigned realties
         /// </exception>
-        public void Delete()
+        public virtual void Delete()
         {
             if (this.Realties.Count > 0)
             {

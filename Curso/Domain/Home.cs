@@ -8,31 +8,40 @@
     public class Home
     {
         /// <summary>
+        /// Gets the realty.
+        /// </summary>
+        public virtual Realty Realty { get; private set; }
+
+        /// <summary>
         /// Gets the address.
         /// </summary>
-        public string Address { get; private set; }
+        public virtual string Address { get; private set; }
 
         /// <summary>
         /// Gets the details.
         /// </summary>
-        public string Details { get; private set; }
+        public virtual string Details { get; private set; }
 
         /// <summary>
         /// Gets the interested people.
         /// </summary>
-        public List<Interested> InterestedPeople { get; private set; }
+        public virtual IList<Interested> InterestedPeople { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Home"/> class.
         /// </summary>
+        /// <param name="realty">
+        /// The realty.
+        /// </param>
         /// <param name="address">
         /// The address.
         /// </param>
         /// <param name="details">
         /// The details.
         /// </param>
-        public Home(string address, string details)
+        public Home(Realty realty, string address, string details)
         {
+            this.Assign(realty);
             this.Address = address;
             this.Details = details;
             this.InterestedPeople = new List<Interested>();
@@ -47,10 +56,7 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        /// <param name="manager">
-        /// The manager.
-        /// </param>
-        public void Update(string address, string details, Manager manager)
+        public void Update(string address, string details)
         {
             this.Address = address;
             this.Details = details;
@@ -63,8 +69,44 @@
         {
             foreach (var interested in this.InterestedPeople)
             {
-                interested.Homes.Remove(this); // Desvinculo la casa del interesado
+                this.RemoveInterested(interested); // Desvinculo la casa del interesado
             }
+
+            this.Realty.Homes.Remove(this);
+        }
+
+        /// <summary>
+        /// The add.
+        /// </summary>
+        /// <param name="interested">
+        /// The interested.
+        /// </param>
+        public void AddInterested(Interested interested)
+        {
+            // TODO: Completar
+        }
+
+        /// <summary>
+        /// The remove interested.
+        /// </summary>
+        /// <param name="interested">
+        /// The interested.
+        /// </param>
+        public void RemoveInterested(Interested interested)
+        {
+            // TODO: Completar
+        }
+
+        /// <summary>
+        /// The assign.
+        /// </summary>
+        /// <param name="realty">
+        /// The realty.
+        /// </param>
+        private void Assign(Realty realty)
+        {
+            this.Realty = realty;
+            realty.Homes.Add(this);
         }
     }
 }

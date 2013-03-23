@@ -59,6 +59,7 @@
             Assert.AreEqual("details", this.realty.Details);
             Assert.AreEqual(this.manager, this.realty.Manager);
             Assert.IsTrue(this.manager.Realties.Contains(this.realty));
+            Assert.IsTrue(this.realty.Homes.Count == 0);
         }
 
         /// <summary>

@@ -194,14 +194,18 @@
     <Content Include="Scripts\jquery.mousewheel.js" />
     <Content Include="Scripts\jquery.scrollTo.js" />
     <Content Include="Scripts\modernizr-2.6.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -213,6 +217,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{207BA717-B0A2-459F-A6F5-04BE0409B644}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{15416914-119A-4E12-B0EA-FC353EA8EFA6}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{D5C0C97B-85DA-4224-8F4D-09F2126238B1}</Project>

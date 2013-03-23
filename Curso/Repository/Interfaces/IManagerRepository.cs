@@ -1,13 +1,15 @@
-namespace Domain.Repository
+namespace Repository.Interfaces
 {
     using System.Collections.Generic;
+
+    using Domain;
 
     /// <summary>
     /// The ManagerRepository interface.
     /// </summary>
-    public interface IManagerRepository
+    public interface IManagerRepository : IRepository<Manager>
     {
-        /// <summary>
+        /*/// <summary>
         /// The get.
         /// </summary>
         /// <param name="id">
@@ -40,6 +42,6 @@ namespace Domain.Repository
         /// <returns>
         /// The System.Collections.Generic.List`1[T -&gt; Domain.Manager].
         /// </returns>
-        List<Manager> GetAll();
+        List<Manager> GetAll();*/
     }
 }

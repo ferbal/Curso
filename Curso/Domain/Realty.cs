@@ -1,5 +1,7 @@
 ﻿namespace Domain
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// The realty.
     /// </summary>
@@ -8,22 +10,34 @@
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
-        /// Gets the address.
+        /// Gets or sets the address.
         /// </summary>
-        public string Address { get; private set; }
+        public virtual string Address { get; set; }
 
         /// <summary>
-        /// Gets the details.
+        /// Gets or sets the details.
         /// </summary>
-        public string Details { get; private set; }
+        public virtual string Details { get; set; }
 
         /// <summary>
-        /// Gets the manager.
+        /// Gets or sets the manager.
         /// </summary>
-        public Manager Manager { get; private set; }
+        public virtual Manager Manager { get; set; }
+
+        /// <summary>
+        /// Gets or sets the homes.
+        /// </summary>
+        public virtual IList<Home> Homes { get; set; }
+
+        /// <summary>
+        /// Only for NHibernate
+        /// </summary>
+        public Realty()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Realty"/> class.
@@ -41,8 +55,8 @@
         {
             this.Address = address;
             this.Details = details;
-            this.Manager = manager;
-            this.Manager.Realties.Add(this);
+            this.Hire(manager);
+            this.Homes = new List<Home>();
         }
 
         /// <summary>
@@ -57,25 +71,44 @@
         /// <param name="newManager">
         /// The new manager.
         /// </param>
-        public void Update(string address, string details, Manager newManager)
+        public virtual void Update(string address, string details, Manager newManager)
         {
             this.Address = address;
             this.Details = details;
-
-            this.Manager.Realties.Remove(this); // Sacamos al viejo manager
-
-            this.Manager = newManager;
-            this.Manager.Realties.Add(this);
+            this.Fire();
+            this.Hire(newManager);
         }
 
         /// <summary>
         /// The delete.
         /// </summary>
-        public void Delete()
+        public virtual void Delete()
         {
-            this.Manager.Realties.Remove(this);
+            this.Fire();
+            foreach (var home in this.Homes)
+            {
+                home.Delete();
+            }
         }
 
-        // TIP: el codigo de Update se parece bastante al del constructor, con cosas de Delete. ¿Podemos hacer algo?
+        /// <summary>
+        /// The hire.
+        /// </summary>
+        /// <param name="manager">
+        /// The manager.
+        /// </param>
+        private void Hire(Manager manager)
+        {
+            this.Manager = manager;
+            this.Manager.Realties.Add(this);
+        }
+
+        /// <summary>
+        /// The fire.
+        /// </summary>
+        private void Fire()
+        {
+            this.Manager.Realties.Remove(this); // Sacamos al viejo manager
+        }
     }
 }

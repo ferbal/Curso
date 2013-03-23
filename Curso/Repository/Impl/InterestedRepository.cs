@@ -1,8 +1,11 @@
-﻿namespace Domain.Repository
+﻿namespace Repository.Impl
 {
     using System.Collections.Generic;
 
+    using Domain;
     using Domain.Exceptions;
+
+    using Repository.Interfaces;
 
     /// <summary>
     /// The interested repository.

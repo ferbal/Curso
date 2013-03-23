@@ -1,19 +1,32 @@
-﻿
-namespace Domain.Repository
+﻿namespace Repository.Impl
 {
     using System.Collections.Generic;
 
+    using Domain;
     using Domain.Exceptions;
+
+    using Repository.Interfaces;
 
     /// <summary>
     /// The manager repository.
     /// </summary>
-    public class ManagerRepository : IManagerRepository
+    public class ManagerRepository : BaseRepository<Manager>, IManagerRepository
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagerRepository"/> class.
+        /// </summary>
+        /// <param name="hibernateSessionFactory">
+        /// The hibernate session factory.
+        /// </param>
+        public ManagerRepository(IHibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {   
+        }
+
+        /*
         /// <summary>
         /// The managers.
         /// </summary>
-        private readonly List<Manager> managers = new List<Manager>() { new Manager("Adriano Filgueira", 27), new Manager("Apolinario Figueroa", 25) };
+        private readonly List<Manager> managers = new List<Manager> { new Manager("Adriano Filgueira", 27), new Manager("Apolinario Figueroa", 25) };
 
         /// <summary>
         /// The id counter.
@@ -87,6 +100,6 @@ namespace Domain.Repository
         {
             this.idCounter++;
             return this.idCounter;
-        }
+        }*/
     }
 }
