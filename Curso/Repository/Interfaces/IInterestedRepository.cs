@@ -5,8 +5,9 @@ namespace Repository.Interfaces
     /// <summary>
     /// The InterestedRepository interface.
     /// </summary>
-    public interface IInterestedRepository
+    public interface IInterestedRepository : IRepository<Interested>
     {
+        /*
         /// <summary>
         /// The get.
         /// </summary>
@@ -33,5 +34,6 @@ namespace Repository.Interfaces
         /// The id.
         /// </param>
         void Delete(int id);
+         */
     }
 }

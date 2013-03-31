@@ -10,17 +10,21 @@
     /// <summary>
     /// The interested repository.
     /// </summary>
-    public class InterestedRepository : IInterestedRepository
+    public class InterestedRepository : BaseRepository<Interested>, IInterestedRepository
     {
         /// <summary>
         /// The Interesteds.
         /// </summary>
-        private readonly List<Interested> interesteds = new List<Interested>();
+        /*private readonly List<Interested> interesteds = new List<Interested>();
 
         /// <summary>
         /// The id counter.
         /// </summary>
         private int idCounter = 1000;
+
+        public InterestedRepository(HibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {   
+        }
 
         /// <summary>
         /// The get.
@@ -41,7 +45,6 @@
                     return interested;
                 }
             }
-
             throw new ObjectNotFoundException();
         }
 
@@ -55,6 +58,7 @@
         {
             interested.Id = this.GetId();
             this.interesteds.Add(interested);
+            this.GetSessionFactory().GetSession().Save(interested);
         }
 
         /// <summary>
@@ -79,6 +83,9 @@
         {
             this.idCounter++;
             return this.idCounter;
+        }*/
+        public InterestedRepository(HibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {
         }
     }
 }
