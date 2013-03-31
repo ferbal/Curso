@@ -46,11 +46,19 @@
         public HibernateSessionFactory()
         {
             var connString = ConfigurationManager.ConnectionStrings["Curso"].ConnectionString;
-            this.sessionFactory = Fluently.Configure()
-                                .Database(MsSqlCeConfiguration.Standard.ConnectionString(connString))
-                                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ManagerMapping>())
-                                .ExposeConfiguration(BuildSchema)
-                                .BuildSessionFactory();
+            this.sessionFactory = Fluently.Configure().Database(MsSqlConfiguration.MsSql2008.ConnectionString(@"Server=localhost\SQLExpress;Database=Curso;Trusted_Connection=True;").ShowSql())
+                .Mappings(m => {
+                    m.FluentMappings.AddFromAssemblyOf<ManagerMapping>();
+                    m.FluentMappings.AddFromAssemblyOf<RealtyMapping>();
+                    m.FluentMappings.AddFromAssemblyOf<InmuebleMapping>();
+                }).
+                ExposeConfiguration(BuildSchema).BuildSessionFactory();
+//            this.sessionFactory = Fluently.Configure().Database(MsSqlCeConfiguration.Standard.ConnectionString(connString)).Mappings(m => m.FluentMappings.AddFromAssemblyOf<ManagerMapping>()).
+//                ExposeConfiguration(BuildSchema).BuildSessionFactory();
+            //
+            
+            
+
         }
 
         /// <summary>

@@ -18,7 +18,7 @@
         /// <param name="hibernateSessionFactory">
         /// The hibernate session factory.
         /// </param>
-        public ManagerRepository(IHibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        public ManagerRepository(HibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
         {   
         }
 

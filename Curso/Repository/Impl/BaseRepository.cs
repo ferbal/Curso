@@ -14,7 +14,7 @@
         /// <param name="hibernateSessionFactory">
         /// The hibernate Session Factory.
         /// </param>
-        protected BaseRepository(IHibernateSessionFactory hibernateSessionFactory)
+        protected BaseRepository(HibernateSessionFactory hibernateSessionFactory)
         {
             this.hibernateSessionFactory = hibernateSessionFactory;
         }

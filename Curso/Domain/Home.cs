@@ -7,25 +7,30 @@
     /// </summary>
     public class Home
     {
+        public virtual int Id { get; set; }
         /// <summary>
         /// Gets the realty.
         /// </summary>
-        public virtual Realty Realty { get; private set; }
+        public virtual Realty Realty { get; set; }
 
         /// <summary>
         /// Gets the address.
         /// </summary>
-        public virtual string Address { get; private set; }
+        public virtual string Address { get; set; }
 
         /// <summary>
         /// Gets the details.
         /// </summary>
-        public virtual string Details { get; private set; }
+        public virtual string Details { get; set; }
 
         /// <summary>
         /// Gets the interested people.
         /// </summary>
-        public virtual IList<Interested> InterestedPeople { get; private set; }
+        public virtual IList<Interested> InterestedPeople { get; set; }
+
+        public Home()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Home"/> class.
@@ -41,7 +46,7 @@
         /// </param>
         public Home(Realty realty, string address, string details)
         {
-            this.Assign(realty);
+            //this.Assign(realty);
             this.Address = address;
             this.Details = details;
             this.InterestedPeople = new List<Interested>();
@@ -56,7 +61,7 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        public void Update(string address, string details)
+        public virtual void Update(string address, string details)
         {
             this.Address = address;
             this.Details = details;
@@ -65,14 +70,19 @@
         /// <summary>
         /// The delete.
         /// </summary>
-        public void Delete()
+        public virtual void Delete()
         {
-            foreach (var interested in this.InterestedPeople)
+            if (this.InterestedPeople != null)
             {
-                this.RemoveInterested(interested); // Desvinculo la casa del interesado
+                foreach (var interested in this.InterestedPeople)
+                {
+                    this.RemoveInterested(interested); // Desvinculo la casa del interesado
+                }
             }
-
-            this.Realty.Homes.Remove(this);
+            if (this.Realty != null)
+            {
+                this.Realty.Homes.Remove(this);
+            }
         }
 
         /// <summary>
@@ -81,7 +91,7 @@
         /// <param name="interested">
         /// The interested.
         /// </param>
-        public void AddInterested(Interested interested)
+        public virtual void AddInterested(Interested interested)
         {
             // TODO: Completar
         }
@@ -92,7 +102,7 @@
         /// <param name="interested">
         /// The interested.
         /// </param>
-        public void RemoveInterested(Interested interested)
+        public virtual void RemoveInterested(Interested interested)
         {
             // TODO: Completar
         }
@@ -103,10 +113,10 @@
         /// <param name="realty">
         /// The realty.
         /// </param>
-        private void Assign(Realty realty)
+        public virtual void Assign(Realty realty)
         {
             this.Realty = realty;
-            realty.Homes.Add(this);
+            //realty.Homes.Add(this);
         }
     }
 }
