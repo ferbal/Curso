@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRealtyService.cs" />
+    <Compile Include="RealtyService.cs" />
     <Compile Include="IInterestedService.cs" />
     <Compile Include="InterestedService.cs" />
     <Compile Include="IInmuebleService.cs" />

@@ -10,8 +10,9 @@
     /// <summary>
     /// The realty repository.
     /// </summary>
-    public class RealtyRepository : IRealtyRepository
+    public class RealtyRepository : BaseRepository<Realty>, IRealtyRepository
     {
+        /*
         /// <summary>
         /// The Realties.
         /// </summary>
@@ -79,6 +80,10 @@
         {
             this.idCounter++;
             return this.idCounter;
+        }
+         */
+        public RealtyRepository(HibernateSessionFactory hibernateSessionFactory) : base(hibernateSessionFactory)
+        {
         }
     }
 }

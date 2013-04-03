@@ -12,6 +12,8 @@
         /// </summary>
         public virtual int Id { get; set; }
 
+        public virtual string Name { get; set; }
+
         /// <summary>
         /// Gets or sets the address.
         /// </summary>
@@ -51,8 +53,9 @@
         /// <param name="manager">
         /// The manager.
         /// </param>
-        public Realty(string address, string details, Manager manager)
+        public Realty(string name, string address, string details, Manager manager)
         {
+            this.Name = name;
             this.Address = address;
             this.Details = details;
             this.Hire(manager);
@@ -71,8 +74,9 @@
         /// <param name="newManager">
         /// The new manager.
         /// </param>
-        public virtual void Update(string address, string details, Manager newManager)
+        public virtual void Update(string name, string address, string details, Manager newManager)
         {
+            this.Name = name;
             this.Address = address;
             this.Details = details;
             this.Fire();

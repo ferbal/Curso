@@ -1,6 +1,8 @@
 ﻿
 namespace Curso.ViewModels
 {
+    using System.Collections.Generic;
+    using Domain;
     /// <summary>
     /// The manager view model.
     /// </summary>
@@ -20,6 +22,9 @@ namespace Curso.ViewModels
         /// Gets or sets the age.
         /// </summary>
         public int Age { get; set; }
+
+        public IList<Realty> Realties { get; set; }
+                
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagerViewModel"/> class.

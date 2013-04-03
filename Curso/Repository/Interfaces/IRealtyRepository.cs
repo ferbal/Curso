@@ -7,6 +7,7 @@ namespace Repository.Interfaces
     /// </summary>
     public interface IRealtyRepository // Tip: Pensar porque no tiene un metodo de "update"
     {
+        /*
         /// <summary>
         /// The get.
         /// </summary>
@@ -33,5 +34,6 @@ namespace Repository.Interfaces
         /// The id.
         /// </param>
         void Delete(int id);
+         */
     }
 }

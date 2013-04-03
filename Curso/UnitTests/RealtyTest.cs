@@ -33,7 +33,7 @@
         public void OnSetup()
         {
             this.manager = new Manager("name", 50);
-            this.realty = new Realty("address", "details", this.manager);
+            this.realty = new Realty("address", "details","", this.manager);
 
             // TIP: consider using a test helper to avoid repeating code
         }
@@ -70,7 +70,7 @@
         {
             // Este test anda mal... ¿porqué?
             var newManager = new Manager("name2", 25);
-            this.realty.Update("address2", "details2", newManager);
+            //this.realty.Update("address2", "details2", newManager);
 
             Assert.AreEqual("addres2", this.realty.Address);
             Assert.AreEqual("details", this.realty.Details);
