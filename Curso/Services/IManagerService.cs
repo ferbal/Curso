@@ -53,6 +53,8 @@ namespace Services
         /// </param>
         void Update(int id, string name, int age);
 
+        void AddRealty(int id, Realty realty);
+
         /// <summary>
         /// The delete.
         /// </summary>

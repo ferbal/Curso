@@ -1,0 +1,47 @@
+﻿@model Curso.ViewModels.RealtyViewModel
+           
+@{
+    ViewBag.Title = "Inmobiliaria";
+}
+
+<div class="row-fluid metro">
+    <div class="span2 offset4">
+        @using (Html.BeginForm("Update", "Realty", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Id)
+            @Html.ValidationSummary(true)
+            <div class="control-group">
+                <label class="control-label">Nombre</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Dirección</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Detalle</label>
+                <div class="controls">
+                    @Html.EditorFor(model => model.Details)
+                    @Html.ValidationMessageFor(model => model.Details)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Manager</label>
+                <div class="controls">
+                    @Html.DropDownListFor(model => model.Manager.Id, new SelectList(@ViewBag.Categorias, "Id", "Name", @ViewBag.Selection))                    
+                    @Html.ValidationMessageFor(model => model.Manager.Id)
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="@Url.Action("Index", "Realty")"><button type="button" class="btn">Cancelar</button></a>
+            </div>            
+        }
+    </div>
+</div>

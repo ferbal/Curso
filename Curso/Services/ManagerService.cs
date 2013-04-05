@@ -97,7 +97,16 @@
             this.managerRepository.GetSessionFactory().TransactionalInterceptor(() =>
             {
                 var manager = this.managerRepository.Get(id);
-                manager.Update(name, age);
+                manager.Update(name, age);               
+            });
+        }
+
+        public void AddRealty(int id, Realty realty)
+        {
+            this.managerRepository.GetSessionFactory().TransactionalInterceptor(() =>
+            {
+                var manager = this.managerRepository.Get(id);
+                manager.AddRealty(realty);
             });
         }
 

@@ -64,7 +64,12 @@
         public virtual void Update(string name, int age)
         {
             this.Name = name;
-            this.Age = age;
+            this.Age = age;            
+        }
+
+        public virtual void AddRealty(Realty realty)
+        {
+            this.Realties.Add(realty);
         }
 
         /// <summary>

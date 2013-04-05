@@ -12,7 +12,7 @@
         /// </summary>
         public RealtyMapping()
         {
-            this.Id(realty => realty.Id).GeneratedBy.Identity();
+            this.Id(realty => realty.Id).Not.Nullable();
             this.Map(realty => realty.Name).Not.Nullable().Length(15).Not.LazyLoad();
             this.Map(realty => realty.Address).Not.Nullable().Length(50).Not.LazyLoad();
             this.Map(realty => realty.Details).Not.Nullable().Length(200).Not.LazyLoad();

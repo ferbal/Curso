@@ -29,6 +29,8 @@
         /// </summary>
         public virtual Manager Manager { get; set; }
 
+        public virtual int Manager_Id { get; set; }
+
         /// <summary>
         /// Gets or sets the homes.
         /// </summary>
@@ -53,12 +55,16 @@
         /// <param name="manager">
         /// The manager.
         /// </param>
-        public Realty(string name, string address, string details, Manager manager)
+        public Realty(int id, string name, string address, string details, Manager manager)
         {
+            this.Id = id;
             this.Name = name;
             this.Address = address;
             this.Details = details;
-            this.Hire(manager);
+            if (this.Id != 0)
+            {
+                this.Hire(manager);
+            }
             this.Homes = new List<Home>();
         }
 
@@ -81,7 +87,7 @@
             this.Details = details;
             this.Fire();
             this.Hire(newManager);
-        }
+        }        
 
         /// <summary>
         /// The delete.
@@ -89,9 +95,12 @@
         public virtual void Delete()
         {
             this.Fire();
-            foreach (var home in this.Homes)
+            if (this.Homes != null)
             {
-                home.Delete();
+                foreach (var home in this.Homes)
+                {
+                    home.Delete();
+                }
             }
         }
 
@@ -103,8 +112,12 @@
         /// </param>
         private void Hire(Manager manager)
         {
-            this.Manager = manager;
-            this.Manager.Realties.Add(this);
+            if (this.Id!=0)
+            {
+                this.Manager = manager;
+                
+                //this.Manager.Realties.Add(this);
+            }
         }
 
         /// <summary>
@@ -112,7 +125,10 @@
         /// </summary>
         private void Fire()
         {
-            this.Manager.Realties.Remove(this); // Sacamos al viejo manager
+            if (this.Manager != null)
+            {
+                this.Manager.Realties.Remove(this); // Sacamos al viejo manager
+            }
         }
     }
 }
