@@ -160,7 +160,7 @@
 }
 /* template with normal 80x80 image */
 .metro .tile.wide.imagetext {
-   width: 270px;
+   width: 240px;
    height: 110px;
    padding: 20px;
 }

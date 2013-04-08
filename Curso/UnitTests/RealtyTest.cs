@@ -33,7 +33,7 @@
         public void OnSetup()
         {
             this.manager = new Manager("name", 50);
-            this.realty = new Realty("address", "details","", this.manager);
+            this.realty = new Realty(2,"address", "details","", this.manager);
 
             // TIP: consider using a test helper to avoid repeating code
         }

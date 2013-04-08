@@ -10,9 +10,9 @@ namespace Services
 
         Home Get(int id);
 
-        void Create(string address, string detail);
+        void Create(int pos,string address, string detail, Realty realty);
 
-        void Update(int id, string address, string detail);
+        void Update(int id, string address, string detail, Realty realty);
 
         void Delete(int id);
     }

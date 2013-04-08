@@ -10,6 +10,7 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Telefono</th>
+                    <th>Inmuebles</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -19,7 +20,16 @@
                     <tr> 
                         <td>@m.Id</td>
                         <td>@m.Name</td>
-                        <td>@m.Phone</td>
+                        <td>@m.Phone</td>                        
+                        <td>
+                            <a href="@Url.Action("EditHomes", "Interested", new { id = m.Id})">
+                            @{ ViewBag.InterestedId = @m.Id;}
+                            <span class="icon icon-plus"/>
+                            </a>&nbsp;
+                            <a href="@Url.Action("ListHomes", "Interested", new { id = m.Id})">                            
+                            <span class="icon icon-check"/>
+                            </a>&nbsp;
+                        </td>
                         <td>
                             <a href="@Url.Action("Edit","Interested", new { id = m.Id })">
                                 <span class="icon icon-pencil"/>
@@ -37,7 +47,11 @@
 <footer class="win-ui-dark win-commandlayout navbar-fixed-bottom">
     <div class="container">
         <div class="row-fluid metro">
-            <div class="span1 offset10">
+            <div class="span111 offset111">
+                <a class="win-command" href="@Url.Action("Index", "Home")">
+                    <span class="win-commandimage win-commandring">&#xe05d;</span>
+                    <span class="win-label">Back</span>
+                </a>
                 <a class="win-command" href="@Url.Action("Edit", "Interested", new {id = 0})"> <!-- ID = 0 -> New user-->
                     <span class="win-commandimage win-commandring">&#xe03e;</span>
                     <span class="win-label">Add</span>

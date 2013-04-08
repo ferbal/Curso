@@ -15,8 +15,6 @@
 
         public Manager Manager {get; set;}
 
-//        public int Manager_Id { get; set; }
-
         public IList<Home> Homes { get; set; }
 
         public RealtyViewModel(int id, string name, string address, string details, Manager manager)

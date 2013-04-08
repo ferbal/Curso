@@ -54,8 +54,6 @@
                     m.FluentMappings.AddFromAssemblyOf<InmuebleMapping>();                    
                 }).
                 ExposeConfiguration(BuildSchema).BuildSessionFactory();
-//            this.sessionFactory = Fluently.Configure().Database(MsSqlCeConfiguration.Standard.ConnectionString(connString)).Mappings(m => m.FluentMappings.AddFromAssemblyOf<ManagerMapping>()).
-//                ExposeConfiguration(BuildSchema).BuildSessionFactory();
             //cfg => new SchemaExport(cfg).Create(true, true)
 
             

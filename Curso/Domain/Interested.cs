@@ -55,10 +55,11 @@
         /// <param name="phone">
         /// The phone.
         /// </param>
-        public virtual void Update(string name, string phone)
+        public virtual void Update(string name, string phone, IList<Home> homes)
         {
             this.Name = name;
             this.Phone = phone;
+            this.Homes = homes;
         }
 
         /// <summary>

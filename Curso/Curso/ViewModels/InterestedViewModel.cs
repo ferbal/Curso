@@ -13,12 +13,12 @@
 
         public IList<Home> Homes { get; set; }
 
-        public InterestedViewModel(int id, string name, string phone)
+        public InterestedViewModel(int id, string name, string phone, IList<Home> homes)
         {
             this.Id = id;
             this.Name = name;
             this.Phone = phone;
-            this.Homes = new List<Home>();
+            this.Homes = homes;
         }
 
         public InterestedViewModel() { }

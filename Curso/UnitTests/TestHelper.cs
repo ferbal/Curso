@@ -14,7 +14,7 @@ namespace UnitTests
         /// <returns>The Realty</returns>
         public static Realty GetBaseRealty()
         {
-            return new Realty("address", "details", "GetBaseManager()",null);
+            return new Realty(2,"address", "details", "GetBaseManager()",null);
         }
 
         /// <summary>

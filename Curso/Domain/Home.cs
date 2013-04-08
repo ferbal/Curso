@@ -44,9 +44,10 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        public Home(Realty realty, string address, string details)
+        public Home(int id, string address, string details, Realty realty)
         {
-            //this.Assign(realty);
+            this.Id = id;
+            this.Assign(realty);
             this.Address = address;
             this.Details = details;
             this.InterestedPeople = new List<Interested>();
@@ -61,10 +62,11 @@
         /// <param name="details">
         /// The details.
         /// </param>
-        public virtual void Update(string address, string details)
+        public virtual void Update(string address, string details, Realty realty)
         {
             this.Address = address;
             this.Details = details;
+            this.Assign(realty);
         }
 
         /// <summary>
@@ -93,7 +95,7 @@
         /// </param>
         public virtual void AddInterested(Interested interested)
         {
-            // TODO: Completar
+            this.InterestedPeople.Add(interested);
         }
 
         /// <summary>

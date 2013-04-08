@@ -7,11 +7,12 @@
     using Repository.Impl;
 
 
+
     public class InmuebleService : IInmuebleService
     {
-        private readonly InmuebleRepository repoHome;
+        private readonly IInmuebleRepository repoHome;
         
-        public InmuebleService(InmuebleRepository inmuebleRepository)
+        public InmuebleService(IInmuebleRepository inmuebleRepository)
         {
             this.repoHome = inmuebleRepository;        
         }
@@ -37,21 +38,21 @@
             return result;
         }
 
-        public void Create(string address, string detail)
+        public void Create(int pos,string address, string detail,Realty realty)
         {
             this.repoHome.GetSessionFactory().TransactionalInterceptor(() =>
             {
-                var inmueble = new Home(null,address,detail);
+                var inmueble = new Home(pos,address,detail,realty);
                 this.repoHome.Add(inmueble);
             });
         }
 
-        public void Update(int id, string address, string detail)
+        public void Update(int id, string address, string detail,Realty realty)
         {
             this.repoHome.GetSessionFactory().TransactionalInterceptor(() =>
             {
                 var inmueble = this.repoHome.Get(id);
-                inmueble.Update(address, detail);
+                inmueble.Update(address, detail,realty);
             });
         }
 
