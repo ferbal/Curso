@@ -61,28 +61,19 @@ namespace Curso.App_Start
         {
             kernel.Bind<IHibernateSessionFactory>().To<HibernateSessionFactory>().InSingletonScope();
             
-            kernel.Bind<IInterestedRepository>().To<InterestedRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
-            kernel.Bind<IInmuebleRepository>().To<InmuebleRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
-            kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
+            kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));            
             kernel.Bind<IManagerService>().To<ManagerService>().InSingletonScope().WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)));
+            
+            kernel.Bind<IInmuebleRepository>().To<InmuebleRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
             kernel.Bind<IInmuebleService>().To<InmuebleService>().InSingletonScope().WithConstructorArgument("IInmuebleRepository", kernel.GetService(typeof(IInmuebleRepository)));
+
+            kernel.Bind<IInterestedRepository>().To<InterestedRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
             kernel.Bind<IInterestedService>().To<InterestedService>().InSingletonScope().WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)))
                                                                                         .WithConstructorArgument("IInmuebleRepository", kernel.GetService(typeof(IInmuebleRepository)));
-            /*
-            kernel.Bind<IManagerRepository>().To<ManagerRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
-            kernel.Bind<IManagerService>().To<ManagerService>().InSingletonScope().WithConstructorArgument("IManagerRepository", kernel.GetService(typeof(IManagerRepository)));
-
+            
             kernel.Bind<IRealtyRepository>().To<RealtyRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
             kernel.Bind<IRealtyService>().To<RealtyService>().InSingletonScope().WithConstructorArgument("IRealtyRepository", kernel.GetService(typeof(RealtyRepository)));
-
-            kernel.Bind<IInterestedRepository>().To<InterestedRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
-            kernel.Bind<IInterestedService>().To<InterestedService>().InSingletonScope().WithConstructorArgument("IInterestedRepository", kernel.GetService(typeof(IInterestedRepository)))
-                                                                                        .WithConstructorArgument("IInmuebleRepository", kernel.GetService(typeof(IInmuebleRepository)));
-                                        
-
-            kernel.Bind<IInmuebleRepository>().To<InmuebleRepository>().InSingletonScope().WithConstructorArgument("IHibernateSessionFactory", kernel.GetService(typeof(IHibernateSessionFactory)));
-            kernel.Bind<IInmuebleService>().To<InmuebleService>().InSingletonScope().WithConstructorArgument("IInmuebleRepository", kernel.GetService(typeof(IInmuebleRepository)));
-            */
+            
         }        
     }
 }
