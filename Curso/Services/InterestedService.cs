@@ -69,7 +69,7 @@
 
         public void DelHomeFromList(int interestedId, int homeId)
         {
-            this.repoInterested.GetSessionFactory().TransactionalInterceptor(() =>
+            this.repoInmueble.GetSessionFactory().TransactionalInterceptor(() =>
             {
                 var interested = this.repoInterested.Get(interestedId);
                 var home = this.repoInmueble.Get(homeId);

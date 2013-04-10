@@ -5,7 +5,7 @@ namespace Repository.Interfaces
     /// <summary>
     /// The RealtyRepository interface.
     /// </summary>
-    public interface IRealtyRepository // Tip: Pensar porque no tiene un metodo de "update"
+    public interface IRealtyRepository : IRepository<Realty> // Tip: Pensar porque no tiene un metodo de "update"
     {
         /*
         /// <summary>

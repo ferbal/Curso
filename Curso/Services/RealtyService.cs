@@ -9,9 +9,9 @@
 
     public class RealtyService : IRealtyService
     {
-        private readonly RealtyRepository repoRealty;
+        private readonly IRealtyRepository repoRealty;
         
-        public RealtyService(RealtyRepository realtyRepository)
+        public RealtyService(IRealtyRepository realtyRepository)
         {
             this.repoRealty = realtyRepository;        
         }
